@@ -1,4 +1,4 @@
-# HarmoTail website — V2
+# HarmoTail website — V2.1 Privacy Fix
 
 Public landing page for **HarmoTail — a production-focused native Tailscale-compatible client for HarmonyOS NEXT.**
 
@@ -25,3 +25,15 @@ GitHub Pages should remain configured as:
 Expected URL:
 
 `https://wuwu888.github.io/harmotail-harmonyos/`
+
+
+## V2.1 privacy correction
+
+The overview screenshot used in both homepage locations was corrected:
+
+- “已连接” remains fully visible.
+- Only the Tailnet IP beneath “已连接” is redacted.
+- Every visible Tailnet IP in the device list is redacted, including the bottom device.
+- The direct LAN endpoint is redacted.
+- Device names remain visible for a natural product-demo appearance.
+- Both homepage placements update automatically because they reference the same asset.
