@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>HarmoTail | Tailscale-compatible Client for HarmonyOS NEXT</title>
+  <meta name="description" content="HarmoTail is a production-focused native Tailscale-compatible client for HarmonyOS NEXT, built for Huawei and the HarmonyOS ecosystem." />
+  <meta name="keywords" content="HarmoTail,Tailscale,HarmonyOS,HarmonyOS NEXT,Huawei,VPN,tailnet,Taildrop,Taildrive,Exit Node,MagicDNS" />
+  <meta property="og:title" content="HarmoTail — Tailscale-compatible Client for HarmonyOS NEXT" />
+  <meta property="og:description" content="Native Tailscale-compatible networking for HarmonyOS NEXT." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#111827" />
+  <style>
+    :root{
+      --bg:#f7f8fb;
+      --panel:#ffffff;
+      --text:#111827;
+      --muted:#667085;
+      --line:#e7eaf0;
+      --accent:#2563eb;
+      --accent2:#1d4ed8;
+      --soft:#eef4ff;
+      --green:#15803d;
+      --shadow:0 20px 60px rgba(17,24,39,.08);
+      --radius:24px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji",sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at 10% 0%, rgba(37,99,235,.08), transparent 35%),
+        radial-gradient(circle at 90% 8%, rgba(99,102,241,.08), transparent 32%),
+        var(--bg);
+      line-height:1.6;
+    }
+    a{color:inherit}
+    .wrap{width:min(1120px,calc(100% - 36px));margin:auto}
+    .nav{
+      display:flex;align-items:center;justify-content:space-between;
+      padding:22px 0;
+    }
+    .brand{font-weight:800;font-size:22px;letter-spacing:-.02em}
+    .tag{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:7px 11px;border-radius:999px;background:#fff;border:1px solid var(--line);
+      color:var(--muted);font-size:13px;
+    }
+    .dot{width:8px;height:8px;border-radius:50%;background:var(--green)}
+    .hero{
+      padding:76px 0 72px;
+      display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;
+    }
+    h1{
+      margin:0 0 18px;
+      font-size:clamp(46px,7vw,82px);
+      line-height:.98;
+      letter-spacing:-.055em;
+    }
+    .subtitle{
+      font-size:clamp(22px,3.4vw,38px);
+      line-height:1.12;
+      letter-spacing:-.035em;
+      margin:0 0 22px;
+      max-width:760px;
+    }
+    .lead{font-size:18px;color:var(--muted);max-width:720px;margin:0 0 30px}
+    .buttons{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{
+      display:inline-block;padding:13px 18px;border-radius:12px;text-decoration:none;
+      font-weight:700;border:1px solid var(--line);background:#fff;
+    }
+    .btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+    .btn.primary:hover{background:var(--accent2)}
+    .device{
+      background:linear-gradient(160deg,#101827,#1f2937);
+      border-radius:34px;padding:18px;box-shadow:var(--shadow);
+      min-height:390px;display:flex;align-items:center;justify-content:center;
+    }
+    .screen{
+      width:100%;background:#f8fafc;border-radius:24px;padding:24px;
+      min-height:350px;
+    }
+    .screen-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
+    .screen-title{font-size:24px;font-weight:800}
+    .pill{font-size:12px;padding:6px 9px;background:#e8f7ed;color:#177245;border-radius:999px}
+    .row{padding:15px 0;border-top:1px solid #e5e7eb;display:flex;justify-content:space-between;gap:18px}
+    .row span:first-child{color:#697586}
+    .row span:last-child{font-weight:650;text-align:right}
+    section{padding:70px 0}
+    .section-title{font-size:38px;letter-spacing:-.04em;margin:0 0 12px}
+    .section-lead{color:var(--muted);max-width:760px;margin:0 0 34px}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{
+      background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+      padding:24px;box-shadow:0 8px 30px rgba(17,24,39,.035)
+    }
+    .card h3{margin:0 0 7px;font-size:19px}
+    .card p{margin:0;color:var(--muted);font-size:14px}
+    .eyebrow{font-size:13px;font-weight:800;color:var(--accent);letter-spacing:.08em;text-transform:uppercase}
+    .architecture{
+      background:#111827;color:white;border-radius:28px;padding:30px;
+      display:grid;grid-template-columns:repeat(4,1fr);gap:12px
+    }
+    .arch{
+      background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);
+      padding:18px;border-radius:16px;text-align:center;font-weight:700
+    }
+    .status{
+      display:grid;grid-template-columns:1fr 1fr;gap:18px;
+    }
+    .status .card strong{font-size:24px;display:block;margin-bottom:6px}
+    .contact{
+      background:linear-gradient(135deg,#eff6ff,#eef2ff);
+      border:1px solid #dbeafe;border-radius:28px;padding:34px;
+    }
+    footer{
+      padding:36px 0 54px;color:var(--muted);font-size:12px
+    }
+    .legal{
+      margin-top:18px;padding-top:18px;border-top:1px solid var(--line);
+      max-width:920px
+    }
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr;padding-top:44px}
+      .grid{grid-template-columns:1fr 1fr}
+      .architecture{grid-template-columns:1fr 1fr}
+    }
+    @media (max-width:620px){
+      .grid,.status{grid-template-columns:1fr}
+      .architecture{grid-template-columns:1fr}
+      .device{min-height:auto}
+      .nav .tag{display:none}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <nav class="nav">
+      <div class="brand">HarmoTail</div>
+      <div class="tag"><span class="dot"></span> Private beta · HarmonyOS NEXT</div>
+    </nav>
+
+    <main class="hero">
+      <div>
+        <div class="eyebrow">Native networking for HarmonyOS NEXT</div>
+        <h1>HarmoTail</h1>
+        <p class="subtitle">A production-focused Tailscale-compatible client for HarmonyOS NEXT.</p>
+        <p class="lead">
+          HarmoTail brings native Tailscale connectivity to Huawei and HarmonyOS NEXT devices,
+          with a focus on full mobile-client functionality, reliable system VPN integration,
+          long-term compatibility, and a release-ready user experience.
+        </p>
+        <div class="buttons">
+          <a class="btn primary" href="#features">Explore features</a>
+          <a class="btn" href="#partnership">Partnership</a>
+        </div>
+      </div>
+
+      <div class="device" aria-label="HarmoTail product preview">
+        <div class="screen">
+          <div class="screen-head">
+            <div class="screen-title">HarmoTail</div>
+            <div class="pill">Connected</div>
+          </div>
+          <div class="row"><span>Network</span><span>Tailscale</span></div>
+          <div class="row"><span>Platform</span><span>HarmonyOS NEXT</span></div>
+          <div class="row"><span>VPN</span><span>Native TUN</span></div>
+          <div class="row"><span>Exit Node</span><span>Supported</span></div>
+          <div class="row"><span>DNS</span><span>Core-aware</span></div>
+          <div class="row"><span>Tailnet Lock</span><span>Read-only status</span></div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <section id="features">
+    <div class="wrap">
+      <div class="eyebrow">Product coverage</div>
+      <h2 class="section-title">Built beyond a proof of concept.</h2>
+      <p class="section-lead">
+        HarmoTail is designed as an end-user product, not only a platform port.
+        The current build already covers major Tailscale mobile-client workflows.
+      </p>
+      <div class="grid">
+        <div class="card"><h3>Native VPN / TUN</h3><p>HarmonyOS-native VPN integration backed by the open-source Tailscale core.</p></div>
+        <div class="card"><h3>OAuth & Accounts</h3><p>Interactive sign-in, multi-account switching, saved profiles, and auth-key login.</p></div>
+        <div class="card"><h3>Devices</h3><p>Tailnet device visibility with peer status, paths, activity, and node information.</p></div>
+        <div class="card"><h3>Exit Nodes</h3><p>Select and use approved Tailscale exit nodes with LAN-access controls.</p></div>
+        <div class="card"><h3>DNS & MagicDNS</h3><p>DNS preferences, effective resolvers, search domains, and Core DNS route visibility.</p></div>
+        <div class="card"><h3>App Split Tunneling</h3><p>HarmonyOS app-based routing using the platform VPN blocked-applications capability.</p></div>
+        <div class="card"><h3>Taildrop</h3><p>Native file transfer flows for sending and receiving through Tailscale.</p></div>
+        <div class="card"><h3>Taildrive</h3><p>Taildrive browsing and transfer workflows integrated into the native client experience.</p></div>
+        <div class="card"><h3>Diagnostics</h3><p>Tailscale Bug Report support, network diagnostics, and privacy-safe support reports.</p></div>
+        <div class="card"><h3>Tailnet Lock</h3><p>Read-only visibility into Tailnet Lock state, keys, authority state, and filtered peers.</p></div>
+        <div class="card"><h3>Node Key Expiry</h3><p>Displays Core-reported key expiry, remaining time, and re-authentication guidance.</p></div>
+        <div class="card"><h3>Commercial UX</h3><p>Product-oriented settings, status, recovery, safety gates, and upgrade-aware behavior.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="eyebrow">Architecture</div>
+      <h2 class="section-title">Native where it matters.</h2>
+      <p class="section-lead">
+        HarmoTail integrates the Tailscale open-source core with HarmonyOS-native VPN capabilities
+        instead of relying on Android compatibility layers.
+      </p>
+      <div class="architecture">
+        <div class="arch">HarmonyOS NEXT UI</div>
+        <div class="arch">VpnExtensionAbility</div>
+        <div class="arch">Native ARM64 Bridge</div>
+        <div class="arch">Tailscale Core</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="eyebrow">Current status</div>
+      <h2 class="section-title">Advanced private beta.</h2>
+      <div class="status">
+        <div class="card">
+          <strong>On-device</strong>
+          <p>Running and tested on real Huawei hardware with HarmonyOS NEXT.</p>
+        </div>
+        <div class="card">
+          <strong>Production-focused</strong>
+          <p>Development is focused on stability, platform fit, AppGallery readiness, supportability, and long-term maintenance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="partnership">
+    <div class="wrap">
+      <div class="contact">
+        <div class="eyebrow">Partnership</div>
+        <h2 class="section-title">Built to complement the Tailscale ecosystem.</h2>
+        <p class="section-lead">
+          HarmoTail does not aim to replace or compete with the Tailscale control plane.
+          The goal is to provide a high-quality native HarmonyOS endpoint for users and organizations
+          already relying on the Tailscale ecosystem.
+        </p>
+        <p><strong>Partnership interests:</strong> technology partnership, compatibility guidance,
+          trademark and branding guidance, commercial distribution, enterprise deployment, and long-term upstream compatibility.</p>
+        <p><strong>Contact:</strong> <a href="mailto:wgydey@gmail.com">wgydey@gmail.com</a></p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <strong>HarmoTail</strong> · Native Tailscale-compatible client for HarmonyOS NEXT.
+      <div class="legal">
+        HarmoTail is an independent project and is not affiliated with or endorsed by Tailscale Inc.
+        Tailscale is a trademark of Tailscale Inc. HarmonyOS and Huawei are trademarks of their respective owners.
+        References to third-party products are descriptive only.
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
