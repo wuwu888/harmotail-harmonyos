@@ -1,27 +1,27 @@
-# HarmoTail website
+# HarmoTail website — V2
 
-This repository hosts the public landing page for **HarmoTail**.
-
-**HarmoTail — a production-focused native Tailscale-compatible client for HarmonyOS NEXT.**
+Public landing page for **HarmoTail — a production-focused native Tailscale-compatible client for HarmonyOS NEXT.**
 
 This website repository does **not** contain the HarmoTail application source code.
 
-## GitHub Pages
+## V2 changes
 
-After committing `index.html` to the `main` branch:
+- Real HarmonyOS NEXT device screenshots added.
+- Sensitive device names, IP addresses, key material, and selected personal app names are redacted.
+- Hero copy changed from “release-ready” to “polished product experience”.
+- “Commercial UX” renamed to “Production UX”.
+- Added real-device proof section and explicit private-beta wording.
+- Partnership positioning and trademark disclaimer retained.
 
-1. Open **Settings**
-2. Open **Pages**
-3. Under **Build and deployment**, select **Deploy from a branch**
-4. Choose **main**
-5. Choose **/(root)**
-6. Click **Save**
+## Deploy
 
-The site will be available at:
+Upload `index.html` and the full `assets/` folder to the root of the `main` branch.
+GitHub Pages should remain configured as:
+
+- Source: **Deploy from a branch**
+- Branch: **main**
+- Folder: **/(root)**
+
+Expected URL:
 
 `https://wuwu888.github.io/harmotail-harmonyos/`
-
-## Trademark notice
-
-HarmoTail is an independent project and is not affiliated with or endorsed by Tailscale Inc.
-Tailscale is a trademark of Tailscale Inc.
