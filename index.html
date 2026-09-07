@@ -62,6 +62,12 @@
     .card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:0 8px 30px rgba(17,24,39,.035)}
     .card h3{margin:0 0 8px;font-size:18px;line-height:1.5}
     .card p{margin:0;color:var(--muted);font-size:14px}
+    .screenshots-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+    .screenshot-card{min-width:0}
+    .screenshot-media{aspect-ratio:3/4;display:grid;place-items:center;overflow:hidden;background:var(--bg);border:1px solid var(--line);border-radius:16px;margin-bottom:20px}
+    .screenshot-media img{display:block;width:100%;height:100%;object-fit:contain}
+    .screenshot-card .screenshot-placeholder{padding:24px;text-align:center;color:var(--muted);font-size:14px}
+    .screenshot-card h3{color:var(--accent2)}
     .features{list-style:none;padding:0;margin:0}
     .check{color:var(--green);margin-right:8px}
     .contact{background:linear-gradient(135deg,#eff6ff,#eef2ff);border:1px solid #dbeafe;border-radius:28px;padding:36px}
@@ -79,13 +85,13 @@
     .skip-link:focus{top:12px}
     @media(max-width:920px){
       .hero{gap:28px;grid-template-columns:1.1fr .9fr}
-      .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .grid,.screenshots-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
     }
     @media(max-width:640px){
       .nav{align-items:flex-start;flex-wrap:wrap;padding:18px 0}
       .nav-links{gap:20px}
       .hero{grid-template-columns:1fr;gap:40px;padding:32px 0 44px}
-      .grid{grid-template-columns:1fr}
+      .grid,.screenshots-grid{grid-template-columns:1fr}
       section{padding:40px 0}
       .card{padding:22px}
       .contact{padding:24px}
@@ -127,6 +133,65 @@
         </div>
         <figcaption>Beta 版本真机界面 · 网络地址等敏感信息已脱敏</figcaption>
       </figure>
+    </section>
+
+    <section class="wrap" id="screenshots" aria-labelledby="screenshots-title">
+      <p class="eyebrow" lang="en">Product screenshots</p>
+      <h2 class="section-title" id="screenshots-title">产品截图</h2>
+      <p class="section-lead">了解 HarmoTail 的原生连接与网络管理体验。更多 Beta 版本截图将陆续补充。</p>
+      <!-- 截图待提供：文件放入 assets/screenshots/ 后，移除对应 template 外层与占位文字，保留 img。 -->
+      <div class="screenshots-grid">
+        <article class="card screenshot-card">
+          <div class="screenshot-media">
+            <template>
+              <img src="assets/screenshots/connection.png" alt="原生 HarmonyOS Tailscale 连接截图" loading="lazy" decoding="async" />
+            </template>
+            <p class="screenshot-placeholder">截图待补充</p>
+          </div>
+          <h3>原生 HarmonyOS Tailscale 连接</h3>
+          <p>实时查看连接状态、Tailnet设备和网络状态。</p>
+        </article>
+        <article class="card screenshot-card">
+          <div class="screenshot-media">
+            <template>
+              <img src="assets/screenshots/devices.png" alt="Tailnet设备管理截图" loading="lazy" decoding="async" />
+            </template>
+            <p class="screenshot-placeholder">截图待补充</p>
+          </div>
+          <h3>Tailnet设备管理</h3>
+          <p>管理你的个人设备网络。</p>
+        </article>
+        <article class="card screenshot-card">
+          <div class="screenshot-media">
+            <template>
+              <img src="assets/screenshots/exit-node.png" alt="Exit Node支持截图" loading="lazy" decoding="async" />
+            </template>
+            <p class="screenshot-placeholder">截图待补充</p>
+          </div>
+          <h3>Exit Node支持</h3>
+          <p>支持出口节点和局域网访问。</p>
+        </article>
+        <article class="card screenshot-card">
+          <div class="screenshot-media">
+            <template>
+              <img src="assets/screenshots/network-controls.png" alt="高级网络控制截图" loading="lazy" decoding="async" />
+            </template>
+            <p class="screenshot-placeholder">截图待补充</p>
+          </div>
+          <h3>高级网络控制</h3>
+          <p>支持DNS、应用分流和高级配置。</p>
+        </article>
+        <article class="card screenshot-card">
+          <div class="screenshot-media">
+            <template>
+              <img src="assets/screenshots/beta.png" alt="Beta测试版本截图" loading="lazy" decoding="async" />
+            </template>
+            <p class="screenshot-placeholder">截图待补充</p>
+          </div>
+          <h3>Beta测试版本</h3>
+          <p>持续优化中的HarmonyOS原生客户端。</p>
+        </article>
+      </div>
     </section>
 
     <section class="wrap" aria-labelledby="about-title">
