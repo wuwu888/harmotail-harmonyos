@@ -1,39 +1,95 @@
-# HarmoTail website — V2.1 Privacy Fix
+# HarmoTail
 
-Public landing page for **HarmoTail — a production-focused native Tailscale-compatible client for HarmonyOS NEXT.**
+## HarmonyOS 原生 Tailscale 兼容客户端
 
-This website repository does **not** contain the HarmoTail application source code.
+HarmoTail 是运行于 HarmonyOS 平台的原生网络客户端，
+帮助用户连接和管理自己的 Tailscale 网络环境。
 
-## V2 changes
+当前版本：
 
-- Real HarmonyOS NEXT device screenshots added.
-- Sensitive device names, IP addresses, key material, and selected personal app names are redacted.
-- Hero copy changed from “release-ready” to “polished product experience”.
-- “Commercial UX” renamed to “Production UX”.
-- Added real-device proof section and explicit private-beta wording.
-- Partnership positioning and trademark disclaimer retained.
-
-## Deploy
-
-Upload `index.html` and the full `assets/` folder to the root of the `main` branch.
-GitHub Pages should remain configured as:
-
-- Source: **Deploy from a branch**
-- Branch: **main**
-- Folder: **/(root)**
-
-Expected URL:
-
-`https://wuwu888.github.io/harmotail-harmonyos/`
+Beta 0.14.0
 
 
-## V2.1 privacy correction
+## 功能
 
-The overview screenshot used in both homepage locations was corrected:
+### 网络连接
 
-- “已连接” remains fully visible.
-- Only the Tailnet IP beneath “已连接” is redacted.
-- Every visible Tailnet IP in the device list is redacted, including the bottom device.
-- The direct LAN endpoint is redacted.
-- Device names remain visible for a natural product-demo appearance.
-- Both homepage placements update automatically because they reference the same asset.
+- Tailscale 网络连接
+- Peer 设备管理
+- 网络状态查看
+
+
+### Exit Node
+
+- Exit Node 支持
+- Exit DNS
+- Allow LAN 局域网访问
+- 自动恢复最近使用出口节点
+
+
+### 设备互联
+
+- Taildrop 文件传输
+- 多 Profile 管理
+- App 分流
+
+
+### 稳定性优化
+
+- VPN 生命周期优化
+- 网络恢复优化
+- 连接状态恢复
+
+
+## 产品官网
+
+https://wuwu888.github.io/harmotail-harmonyos/
+
+
+## Beta 测试
+
+HarmoTail 当前处于 Beta 测试阶段。
+
+欢迎 HarmonyOS 用户参与测试。
+
+反馈邮箱：
+
+harmotail@163.com
+
+
+反馈建议提供：
+
+- HarmonyOS版本
+- 手机型号
+- 使用场景
+- 问题描述
+
+
+## 隐私政策
+
+https://wuwu888.github.io/harmotail-harmonyos/privacy.html
+
+
+## 用户协议
+
+https://wuwu888.github.io/harmotail-harmonyos/terms.html
+
+
+## 更新日志
+
+https://wuwu888.github.io/harmotail-harmonyos/changelog.html
+
+
+## 免责声明
+
+HarmoTail 不是 Tailscale 官方应用。
+
+HarmoTail 与 Tailscale Inc. 无隶属关系，
+也未获得官方授权或背书。
+
+用户需要使用自己的 Tailscale 账户。
+
+
+## License
+
+Beta 测试阶段暂未开放源代码授权。
