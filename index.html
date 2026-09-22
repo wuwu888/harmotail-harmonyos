@@ -109,6 +109,7 @@
       <div class="nav-links">
         <a href="#features">产品功能</a>
         <a href="#download">下载</a>
+        <a href="#install">安装教程</a>
         <a href="changelog.html">更新日志</a>
       </div>
     </nav>
@@ -229,10 +230,89 @@
         <div class="buttons">
           <a class="btn primary" href="https://github.com/wuwu888/HarmoTail-Releases/releases/download/v0.16.1/HarmoTail-v0.16.1-signed.hap">下载 v0.16.1</a>
           <a class="btn" href="https://github.com/wuwu888/HarmoTail-Releases/releases/latest">查看 Release</a>
+          <a class="btn" href="https://github.com/likuai2010/auto-installer/releases/latest">下载小白调试助手</a>
         </div>
         <p>SHA256：</p>
         <p><code>4c10333a63fe3e1cdcf5367a6d26964ea8d870106c427a3eab7bde4b178ade2c</code></p>
         <p>问题反馈：<a class="email" href="mailto:harmotail@163.com">harmotail@163.com</a></p>
+      </div>
+    </section>
+
+    <section class="wrap" id="install" aria-labelledby="install-title">
+      <p class="eyebrow" lang="en">Installation</p>
+      <h2 class="section-title" id="install-title">不会安装？推荐使用小白调试助手</h2>
+      <p class="section-lead">
+        HarmoTail 以 HAP 安装包形式发布。普通用户推荐通过“小白调试助手”安装，无需使用 DevEco Studio。
+      </p>
+
+      <div class="card">
+        <h3>第一步：下载 HarmoTail</h3>
+        <p>
+          下载最新的 <strong>HarmoTail-v0.16.1-signed.hap</strong>。
+        </p>
+        <div class="buttons" style="margin-top:16px">
+          <a class="btn primary" href="https://github.com/wuwu888/HarmoTail-Releases/releases/download/v0.16.1/HarmoTail-v0.16.1-signed.hap">
+            下载 HarmoTail v0.16.1
+          </a>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:18px">
+        <h3>第二步：下载小白调试助手</h3>
+        <p>
+          在电脑上安装小白调试助手。Windows 用户下载 Windows 版，Mac 用户下载 Mac 版。
+        </p>
+        <div class="buttons" style="margin-top:16px">
+          <a class="btn primary" href="https://github.com/likuai2010/auto-installer/releases/latest">
+            下载小白调试助手最新版
+          </a>
+          <a class="btn" href="https://github.com/likuai2010/auto-installer">
+            查看小白调试助手项目
+          </a>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:18px">
+        <h3>第三步：打开手机开发者模式和无线调试</h3>
+        <ol>
+          <li>打开 HarmonyOS 手机“设置 → 关于本机”。</li>
+          <li>连续点击“软件版本”约 5 次，开启开发者模式。</li>
+          <li>进入“设置 → 系统 → 开发者选项”。</li>
+          <li>开启“无线调试”。</li>
+        </ol>
+        <p>
+          不同 HarmonyOS 版本的菜单名称可能略有差异。
+        </p>
+      </div>
+
+      <div class="card" style="margin-top:18px">
+        <h3>第四步：连接手机并安装 HarmoTail</h3>
+        <ol>
+          <li>在电脑上打开小白调试助手。</li>
+          <li>按照工具提示，通过无线调试或数据线连接 HarmonyOS 设备。</li>
+          <li>选择 HAP 安装功能。</li>
+          <li>选择刚刚下载的 <strong>HarmoTail-v0.16.1-signed.hap</strong>。</li>
+          <li>按照小白调试助手提示完成安装。</li>
+        </ol>
+        <p>
+          如果工具提示需要登录、签名或配置 Profile，请按照小白调试助手界面的提示完成即可。
+        </p>
+      </div>
+
+      <div class="card" style="margin-top:18px">
+        <h3>以后升级 HarmoTail</h3>
+        <p>
+          下载新版 HAP 后，继续通过小白调试助手覆盖安装即可。
+          建议不要先卸载旧版本，以便保留已有账号和 Tailnet 状态。
+        </p>
+      </div>
+
+      <div class="card" style="margin-top:18px">
+        <h3>Mac 用户提示</h3>
+        <p>
+          如果 macOS 首次运行小白调试助手时被系统拦截，可在终端执行：
+        </p>
+        <p><code>xattr -d com.apple.quarantine /Applications/小白调试助手.app</code></p>
       </div>
     </section>
 

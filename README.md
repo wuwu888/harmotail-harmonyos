@@ -58,6 +58,30 @@ SHA256：
 
 `4c10333a63fe3e1cdcf5367a6d26964ea8d870106c427a3eab7bde4b178ade2c`
 
+## 普通用户安装教程
+
+HarmoTail 以 `.hap` 安装包形式发布。
+
+普通用户推荐使用 **小白调试助手** 安装，无需 DevEco Studio。
+
+小白调试助手官方项目：
+
+https://github.com/likuai2010/auto-installer
+
+最新版下载：
+
+https://github.com/likuai2010/auto-installer/releases/latest
+
+安装步骤：
+
+1. 下载 `HarmoTail-v0.16.1-signed.hap`
+2. 在 Windows 或 macOS 下载并打开小白调试助手
+3. 在 HarmonyOS 手机开启开发者模式和无线调试
+4. 使用小白调试助手连接手机
+5. 选择 HarmoTail HAP 安装包并完成安装
+6. 如工具提示登录、签名或配置 Profile，请按界面提示完成
+7. 后续升级建议直接覆盖安装，不要先卸载旧版本
+
 ## 产品官网
 
 https://wuwu888.github.io/harmotail-harmonyos/
