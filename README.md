@@ -7,7 +7,7 @@ HarmoTail 是面向 HarmonyOS NEXT / 鸿蒙系统的原生 Tailscale 客户端�
 如果你正在寻找 **Tailscale 鸿蒙客户端、HarmonyOS Tailscale、鸿蒙 VPN、HarmonyOS NEXT VPN**，
 HarmoTail 可以让华为鸿蒙设备接入自己的 Tailscale Tailnet。
 
-当前正式版本：**v0.16.1**
+当前正式版本：**v0.16.3**
 
 ## 主要功能
 
@@ -44,7 +44,7 @@ HarmoTail 可以让华为鸿蒙设备接入自己的 Tailscale Tailnet。
 
 最新正式版本：
 
-**HarmoTail v0.16.1**
+**HarmoTail v0.16.3**
 
 GitHub Releases：
 
@@ -52,11 +52,11 @@ https://github.com/wuwu888/HarmoTail-Releases/releases/latest
 
 直接下载：
 
-https://github.com/wuwu888/HarmoTail-Releases/releases/download/v0.16.1/HarmoTail-v0.16.1-signed.hap
+https://github.com/wuwu888/HarmoTail-Releases/releases/download/v0.16.3/HarmoTail-v0.16.3-signed.hap
 
 SHA256：
 
-`4c10333a63fe3e1cdcf5367a6d26964ea8d870106c427a3eab7bde4b178ade2c`
+`cfa83b971eb104b634a406a0f1601a2372849624e577735bdedea3d6cd6c450f`
 
 ## 普通用户安装教程
 
@@ -74,7 +74,7 @@ https://github.com/likuai2010/auto-installer/releases/latest
 
 安装步骤：
 
-1. 下载 `HarmoTail-v0.16.1-signed.hap`
+1. 下载 `HarmoTail-v0.16.3-signed.hap`
 2. 在 Windows 或 macOS 下载并打开小白调试助手
 3. 在 HarmonyOS 手机开启开发者模式和无线调试
 4. 使用小白调试助手连接手机

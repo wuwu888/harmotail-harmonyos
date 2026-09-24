@@ -45,6 +45,41 @@ HarmonyOS 原生 Tailscale 兼容客户端
 
 <div class="card">
 
+<h2>v0.16.3</h2>
+
+<p>
+发布日期：2026年9月24日
+</p>
+
+<h3>修复</h3>
+
+<ul>
+
+<li>修复已连接 VPN 在许可证定时复验遇到瞬时 HTTP / JSON 异常时被错误断开的问题</li>
+
+<li>瞬时复验失败时保留当前有效 VPN 会话，并按受控间隔重新尝试</li>
+
+<li>保持原有许可证 hard-stop 绝对截止时间，不因重试延长授权有效期</li>
+
+</ul>
+
+<h3>安全策略</h3>
+
+<ul>
+
+<li>明确授权拒绝、安全验证失败及 hard-stop 到期仍保持 fail-closed 行为</li>
+
+<li>保持现有 VPN 生命周期、stale-alive 恢复与 data-plane 健康检测逻辑</li>
+
+<li>Tailscale Core v1.102.4</li>
+
+</ul>
+
+</div>
+
+
+<div class="card">
+
 <h2>Beta 0.14.0</h2>
 
 <p>
